@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Collection</title>
+</head>
+
+<body>
+    <div class="bg"></div>
+   <div class="gene"> 
+    <input type="text" name="Password" placeholder="Your Password" id="password" readonly="" >
+    <img class="imagelock" src="lock.jpeg" alt="img">
+   </div>
+   <button class="copy" onclick="myFunction();">Copy Text</button>
+    <button class="btn" onclick="getPassword();">Generate Password</button>
+    <script type="text/javascript">
+        function getPassword() {
+            var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1!@#$%^&*()_+|}{/.,][";
+            var passwordlength = 16;
+            var password = "";
+           for (var i = 0; i < passwordlength; i++) {
+                var randomNumber = Math.floor(Math.random() * chars.length);
+                password += chars.substring(randomNumber, randomNumber + 1);
+
+            }
+            document.getElementById("password").value = password;
+        
+        }
+        function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("password");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+
+    </script>
+    <div class="about"><h1>ABOUT US</h1><br>Sourabh<br>TEj<br>Tanveer<br>Shubham <br>ujjawal <br></div>
+</body>
+
+</html>
